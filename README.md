@@ -104,7 +104,7 @@ Clone this repository to your desired folder:
 
 - Install this project with:
 
-```sh
+``` sh
   cd bookstore
 
   npm install or npm i
