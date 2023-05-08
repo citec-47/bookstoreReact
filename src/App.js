@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Routes, Route } from 'react-router-dom';
 import './components/style/Style.css';
 import AllCategories from './components/Categories/Categories';
