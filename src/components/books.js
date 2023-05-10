@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeMyBook } from '../redux/books/books_API';
 
 const Book = ({ items }) => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Book = ({ items }) => {
               type="button"
               onClick={(e) => {
                 e.preventDefault();
-                dispatch(removeBook(id));
+                dispatch(removeMyBook(id));
               }}
             >
               Remove

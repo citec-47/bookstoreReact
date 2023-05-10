@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
 
 const Categories = () => {
-  const categoryEl = useSelector((state) => state.Category);
+  const categoryElement = useSelector((state) => state.Category);
   const dispatch = useDispatch();
   return (
     <>
@@ -16,7 +16,7 @@ const Categories = () => {
         Check status
 
       </button>
-      <h2>{categoryEl}</h2>
+      <h2>{categoryElement}</h2>
     </>
   );
 };

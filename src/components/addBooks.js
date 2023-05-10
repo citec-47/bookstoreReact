@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBook } from '../redux/books/books_API';
 
 const Addbook = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const Addbook = () => {
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
-  const handlesForm = (e) => {
+  const handleForm = (e) => {
     e.preventDefault();
     if (title.trim() !== '' && author.trim() !== '' && category.trim() !== '') {
       const payload = {
@@ -34,7 +34,7 @@ const Addbook = () => {
   return (
     <div>
       <h2>ADD NEW BOOK</h2>
-      <form onSubmit={handlesForm}>
+      <form onSubmit={handleForm}>
         <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Book Title Here" />
         <input type="text" name="author" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Author Name Here" />
         <input type="text" name="category" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="category Name Here" />

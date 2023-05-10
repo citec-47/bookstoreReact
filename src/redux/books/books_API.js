@@ -1,38 +1,38 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const apiLink = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/X8JnkuOPMOkJQ3tlKNbU/books';
+const API_LINK = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/X8JnkuOPMOkJQ3tlKNbU/books';
 
-const ADD_BOOK = 'bookstore/src/redux/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/src/redux/books/REMOVE_BOOK';
-const GET_BOOK = 'bookstore/src/redux/books/GET_BOOK';
+const ADD_BOOK_STORE = 'bookstore/src/redux/books/ADD_BOOK';
+const REMOVE_BOOK_STORE = 'bookstore/src/redux/books/REMOVE_BOOK';
+const GET_BOOK_STORE = 'bookstore/src/redux/books/GET_BOOK';
 
-export const addBook = createAsyncThunk(ADD_BOOK, async (elements) => {
+export const addBook = createAsyncThunk(ADD_BOOK_STORE, async (elements) => {
   const {
     id, title, author, category,
   } = elements;
-  await axios.post(apiLink, {
+  await axios.post(API_LINK, {
     item_id: id, title, author, category,
   });
   return elements;
 });
 
-export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => {
-  await axios.delete(`${apiLink}/${id}`);
+export const removeMyBook = createAsyncThunk(REMOVE_BOOK_STORE, async (id) => {
+  await axios.delete(`${API_LINK}/${id}`);
   return id;
 });
 
-const renderBooks = (res) => Object.entries(res.data).map((arr) => {
+const rendermYBooks = (res) => Object.entries(res.data).map((arr) => {
   const [id, [{ title, author, category }]] = arr;
   return {
     id, title, author, category,
   };
 });
 
-export const fetchBooks = createAsyncThunk(GET_BOOK,
+export const fetchMyBooks = createAsyncThunk(GET_BOOK_STORE,
   async () => {
-    const getbookItems = await axios.get(apiLink);
-    return renderBooks(getbookItems);
+    const getbookItems = await axios.get(API_LINK);
+    return rendermYBooks(getbookItems);
   });
 
 const deleteBook = (state, bookID) => state.filter((book) => book.id !== bookID.payload);
@@ -43,12 +43,12 @@ const bookReducerSlice = createSlice({
     status: 'idle',
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchBooks.fulfilled, (state, action) => {
+    builder.addCase(fetchMyBooks.fulfilled, (state, action) => {
       const items = state;
       items.status = 'success';
       items.books = action.payload;
     });
-    builder.addCase(removeBook.fulfilled, (state, action) => {
+    builder.addCase(removeMyBook.fulfilled, (state, action) => {
       const items = state;
       items.status = 'successful';
       items.books = deleteBook(items.books, action);
