@@ -1,6 +1,6 @@
 import React from 'react';
-import Bookitems from '../components/bookItem';
-import Addbook from '../components/addBooks';
+import Bookitems from '../components/myookItem';
+import Addbook from '../components/addMyBooks';
 
 const BookPage = () => (
   <main>
