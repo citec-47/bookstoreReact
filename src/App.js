@@ -1,17 +1,22 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Routes, Route } from 'react-router-dom';
-import './components/style/Style.css';
-import AllCategories from './components/Categories/Categories';
-import MyTodoList from './components/Todo/Todo';
-import MyLink from './components/AllLinks/Links';
+import {
+  BrowserRouter as Router, Routes, Route,
+} from 'react-router-dom';
+import BookList from './components/myBookList';
+import Categories from './components/myCategories';
+import Header from './components/myHeader';
+import './App.css';
 
-const TodoApp = () => (
-  <>
-    <MyLink />
-    <Routes>
-      <Route path="/" element={<MyTodoList />} />
-      <Route path="/category" element={<AllCategories />} />
-    </Routes>
-  </>
-);
-export default TodoApp;
+function App() {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<BookList />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+    </Router>
+
+  );
+}
+
+export default App;
