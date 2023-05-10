@@ -1,145 +1,157 @@
-<a name="readme-top"></a>
-
+# RBookstore<div align="center"><h1>BOOKSTORE</h1></div>
 <!--
-HOW TO USE:
+HOW TO USE :
 This is an example of how you may give instructions on setting up your project locally.
 
 Modify this file to match your project and remove sections that don't apply.
 
 REQUIRED SECTIONS:
-- Table of Contents
+- Table of Contentss
 - About the Project
   - Built With
-  - Live Demo
-- Getting Started
 - Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
+- Future Features- 
+ - Mobile version design
+- Desktop version design
+- Dynamic HTML for featured-speakers
+
+OPTIONAL SECTIONS:
+- FAQ
 
 After you're finished please remove all the comments and instructions!
 -->
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
 </div>
 
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
+  - [Usage](#usage)
+  - [🔭 Future Features](#future-features)
 - [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [BookStore] <a name="about-project"></a>
+# 📖 Bookstore
 
-BookStore is an online book shelf for storing books read by book lovers. Built with React.
+> This is _**React Bookstore (SPA)**_.
 
 ## 🛠 Built With <a name="built-with"></a>
-
+- HTML
+- CSS
+- JS
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> I Used Gitflow, modules, and advanced React & JS (ES6) in this React Todo App.
 
 <details>
-  <summary>Client</summary>
+  <summary>HTML</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+     <li><a href="https://www.w3schools.com/css/">CSS</a></li>
+     <li><a href="https://www.w3schools.com/css/">Javascript</a></li>
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
+<!-- Features -->
 
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
+### Key Features <a name="key-features"></a>
+
+- **[React Todo App]**
+- **[Styling css with colors, borders, paddings, margins & sizes, etc]**
+_ **[React & javascript functions, modules, ES6 syntax, variables, etc]**
+
 
 <!-- GETTING STARTED -->
+<!-- AUTHORS -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-- A web browser to view output e.g Google Chrome.
-- An IDE e.g Visual studio code.
-- cnode should be installed in your local machine, node website.
-- Install the npm package manager use this to install both node and npm.
-- A terminal.
+In order to run this project you need the following tools:
+- Node.js in your computer
+- IDE(e.g.: Vscode,...)
+- Terminal
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/anyepeter/bookstore.git
+  cd your-prefered-folder
   
+  git clone https://github.com/citec-47/RBookstore.git
 ```
 
 ### Install
 
-Install this project with:
+- Install this project with:
 
+``` sh
+  cd bookstore
+
+  npm install or npm i
+```
+
+### Usage
+
+To run the project, execute the following command:
 
 ```sh
-  npm install
+  npm start
+
 ```
 
 
 
-<!-- AUTHORS -->
+### Usage
+_Run the project on Visual Studio Code Live Server._
+<!--
+Example command:
 
-## 👥 Authors <a name="authors"></a>
+```sh
+  rails server
+### Deployment
 
-👤 **Author1**
+You can deploy this project using:
+Not Yet
+<!--
+Example:
 
-- GitHub: [@anyepeter](https://github.com/githubhandle)
-- Twitter: [@apcode](https://twitter.com/twitterhandle)
-- LinkedIn: [peterchendi](https://linkedin.com/in/linkedinhandle)
+```sh
 
+```
+ -->
 
-<!-- FUTURE FEATURES -->
+# <a name="authors">Ndonyi Maurice</a>
+
+👤 **Ndonyi Maurice Djam**
+
+- GitHub: [NdonyiMaurice](https://github.com/citec-47)
+- Twitter: [@NdonyiMaurice](https://twitter.com/Ndonyi4)
+- LinkedIn: [NdonyiMaurice](https://www.linkedin.com/in/ndonyi-maurice-b5b49b22b/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-
-- [ ] **[Form functions]**
-- [ ] **[Remove button]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+- [x] **[I will Add API for the quotes generator function]**
+- [x] **[I will Deploy this page after completing all things]**
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -148,14 +160,17 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
-
 ## ⭐️ Show your support <a name="support"></a>
 
+> If you like this project feel comfortable to endorse the authors. Give a star in github repository.
 
-If you like this project...
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> We would like to thank my coding partners, mentors and Microverse for their support in building the project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,8 +178,6 @@ If you like this project...
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+> This project has [MIT license](https://github.com/citec-47/Math-magicians/blob/development/LICENSE)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
