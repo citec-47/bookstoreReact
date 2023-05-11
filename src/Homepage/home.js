@@ -1,11 +1,11 @@
 import React from 'react';
-import Bookitems from '../components/bookItems';
+import BookItemses from '../components/bookItems';
 import Addbook from '../components/adBooks';
 
-const BookPage = () => (
+const BookPages = () => (
   <main>
-    <Bookitems />
+    <BookItemses />
     <Addbook />
   </main>
 );
-export default BookPage;
+export default BookPages;

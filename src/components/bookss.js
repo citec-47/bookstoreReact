@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/bookss';
 import '../CSSmodules/bookitem.css';
 
-const Book = ({ items }) => {
-  const dispatch = useDispatch();
+const Books = ({ items }) => {
+  const dispatchBook = useDispatch();
   const {
     id, title, author, category,
   } = items;
@@ -24,7 +24,7 @@ const Book = ({ items }) => {
               type="button"
               onClick={(e) => {
                 e.preventDefault();
-                dispatch(removeBook(id));
+                dispatchBook(removeBook(id));
               }}
             >
               Remove
@@ -52,11 +52,11 @@ const Book = ({ items }) => {
   );
 };
 
-Book.propTypes = {
+Books.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
   category: PropTypes.string,
 }.isRequired;
 
-export default Book;
+export default Books;

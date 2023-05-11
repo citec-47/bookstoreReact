@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Book from './bookss';
-import { fetchBooks } from '../redux/books/bookss';
+import Books from './bookss';
+import { fetchinBooks } from '../redux/books/bookss';
 import '../CSSmodules/bookitem.css';
 
-const Bookitems = () => {
-  const dispatch = useDispatch();
+const BookItemses = () => {
+  const dispatchBook = useDispatch();
   const books = useSelector((state) => state.Books.books);
   useEffect(() => {
-    dispatch(fetchBooks());
-  }, [dispatch]);
+    dispatchBook(fetchinBooks());
+  }, [dispatchBook]);
   return (
     <div>
       <ul className="bookList">
         {
         books && books.map((book) => (
           <li key={book.id}>
-            <Book items={book} />
+            <Books items={book} />
           </li>
         ))
         }
@@ -26,4 +26,4 @@ const Bookitems = () => {
   );
 };
 
-export default Bookitems;
+export default BookItemses;

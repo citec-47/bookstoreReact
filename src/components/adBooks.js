@@ -5,18 +5,18 @@ import { addBook } from '../redux/books/bookss';
 import '../CSSmodules/form.css';
 
 const Addbook = () => {
-  const dispatch = useDispatch();
+  const dispatchBook = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
-  const handleForm = (e) => {
+  const handleBookForm = (e) => {
     e.preventDefault();
     if (title.trim() !== '' && author.trim() !== '' && category.trim() !== '') {
       const payload = {
         id: uuidv4(), title, author, category,
       };
-      dispatch(addBook(payload));
+      dispatchBook(addBook(payload));
       setTitle('');
       setAuthor('');
       setCategory('');
@@ -35,7 +35,7 @@ const Addbook = () => {
   return (
     <div className="genaral-contain">
       <h2 className="heading">ADD NEW BOOK</h2>
-      <form onSubmit={handleForm} className="list-form">
+      <form onSubmit={handleBookForm} className="list-form">
         <input type="text" className="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Book Title Here" />
         <input type="text" name="author" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Author Name Here" />
         <input type="text" className="categoryEl" name="category" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Category Name Here" />

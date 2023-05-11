@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../CSSmodules/navbar.css';
 import { VscAccount } from 'react-icons/vsc';
 
-const Navbar = () => (
+const Navbars = () => (
   <header>
     <nav>
       <ul className="menuList">
@@ -16,4 +16,4 @@ const Navbar = () => (
   </header>
 );
 
-export default Navbar;
+export default Navbars;
