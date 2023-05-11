@@ -1,7 +1,7 @@
 import React from 'react';
 import { CgProfile } from 'react-icons/cg';
 import { NavLink } from 'react-router-dom';
-import style from './Nav.module.css';
+import style from './Navbar.module.css';
 
 function NavBar() {
   return (

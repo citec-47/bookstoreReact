@@ -1,6 +1,6 @@
 import React from 'react';
 import { CircularProgressBar } from '@tomik23/react-circular-progress-bar';
-import style from './Percentage.module.css';
+import style from './myPercentage.module.css';
 
 function PercentageChange() {
   const random = Math.floor(Math.random() * 100);

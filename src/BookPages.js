@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import Nav from './components/Nav';
+import Nav from './components/Navbar';
 import style from './BookPage.module.css';
 import EachBook from './components/BookComponent/EACHBOOK';
 import AddBook from './components/BookComponent/AdBook';

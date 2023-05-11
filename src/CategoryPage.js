@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Nav from './components/Nav';
+import Nav from './components/Navbar';
 import { Category } from './redux/categories/categories';
 import style from './CategorisPage.module.css';
 

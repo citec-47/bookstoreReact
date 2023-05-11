@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import BookPage from './BookPages';
-import CategoriesPage from './CategoriesPage';
+import CategoriesPage from './CategoryPage';
 import './App.css';
 
 function App() {
