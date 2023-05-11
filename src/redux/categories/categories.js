@@ -2,7 +2,7 @@ const CHECKED_STATUS = 'bookstore/src/redux/categories/CHECK_STATUS';
 
 const initialState = [];
 
-const categorizReducer = (state = initialState, action = {}) => {
+const categoryRiducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHECKED_STATUS:
       return 'Under construction';
@@ -15,4 +15,4 @@ export const checkStatus = () => ({
   type: CHECKED_STATUS,
 });
 
-export default categorizReducer;
+export default categoryRiducer;
