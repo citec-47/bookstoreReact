@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Roboto+Slab:wght@100;400;700&display=swap');
+
+.body {
+  padding: 10px 0;
+  margin: 20px 20px;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -1,18 +1,20 @@
-const CHECKED_STATUS = 'bookstore/src/redux/categories/CHECK_STATUS';
+// Actions
+const Actions = [
+  { CHECK: 'bookstore/categories/CHECK' },
+];
 
-const initialState = [];
+// Action Creator
 
-const categorizReducer = (state = initialState, action = {}) => {
+const reducer = (state = [], action) => {
   switch (action.type) {
-    case CHECKED_STATUS:
-      return 'Under construction';
+    case Actions[0].CHECK:
+      return 'Under Construction';
     default:
       return state;
   }
 };
 
-export const checkStatus = () => ({
-  type: CHECKED_STATUS,
-});
+// Creator
+export const Category = () => ({ type: Actions[0].CHECK });
 
-export default categorizReducer;
+export default reducer;

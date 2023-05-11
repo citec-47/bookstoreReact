@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Roboto+Slab:wght@100;400;700&display=swap');
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 30px;
+
+  /* border: 2px solid rgb(226, 226, 226); */
+  margin: 10px 30px;
+  margin-right: 300px;
+}
+
+.containers h1 {
+  font-family: Montserrat, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.containers form {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.containers form > input:nth-child(1) {
+  width: 35rem;
+  height: 35px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px gray solid;
+}
+
+.containers form > input:nth-child(2) {
+  width: 20rem;
+  height: 35px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px gray solid;
+}
+
+.containers form select {
+  width: 12rem;
+  height: 35px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px gray solid;
+}
+
+.butt {
+  width: 12rem;
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  background-color: #0290ff;
+}

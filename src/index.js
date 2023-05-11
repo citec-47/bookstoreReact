@@ -1,20 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import './index.css';
+import theStore from './redux/configStore';
 import App from './App';
-import store from './redux/configureStore';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const append = document.querySelector('#root');
+const root = createRoot(append);
+
 root.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <Router>
+      <Provider store={theStore}>
+        <App />
+      </Provider>
+    </Router>
+  </React.StrictMode>,
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
