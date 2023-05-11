@@ -1,79 +1,69 @@
+// Define action types for adding and removing a book.
 import axios from 'axios';
-import { deleteBook, bookEndPoint } from '../../components/bookAPI';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-// Actions
-const Actions = {
-  ADD: 'bookstore/book/ADD',
-  REMOVE: 'bookstore/book/REMOVE',
-  LOAD: 'bookstore/book/LOAD',
-};
-// state initialized as array
+export const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+export const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+export const GET_BOOK = 'bookstore/books/GET_BOOK';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GYyCqiiRoOj0083JgG28/books';
 
-const initialState = [];
-
-// Reducer
-const reducer = (state = initialState, action) => {
-  const { payLoad } = action;
-  switch (action.type) {
-    case Actions.ADD:
-      return [...state, payLoad.book];
-
-    case Actions.LOAD:
-      return [...payLoad];
-
-    case Actions.REMOVE:
-      return state.filter((book) => book.item_id !== payLoad.id);
-
-    default:
-      return state;
-  }
+const initialState = {
+  books: {},
+  isLoading: true,
 };
 
-// The Action   Creators
-export const booksAPI = () => async (dispatch) => {
-  const response = await axios.get(bookEndPoint());
-  if (response.status === 200) {
-    const payLoad = Object.keys(response.data).map((valu) => ({
-      item_id: valu,
-      ...response.data[valu][0],
-    }));
-
-    dispatch({
-      type: Actions.LOAD,
-      payLoad,
-    });
-  }
-};
-
-export const AddBook = (book) => async (dispatch) => {
-  try {
-    const response = await axios.post(bookEndPoint(), book);
-    if (response.status === 201) {
-      return dispatch({
-        type: Actions.ADD,
-        payLoad: { book },
-      });
+export const getBookFromApi = createAsyncThunk(
+  GET_BOOK,
+  async () => {
+    try {
+      const response = await axios.get(URL);
+      return response.data;
+    } catch (error) {
+      return error;
     }
+  },
+);
 
-    throw new Error();
-  } catch (error) {
-    return 'Book save was unsuccessful';
-  }
-};
-
-export const RemoveBook = (id) => async (dispatch) => {
-  try {
-    const response = await axios.delete(deleteBook(id));
-    if (response.status === 201) {
-      return dispatch({
-        type: Actions.REMOVE,
-        payLoad: { id },
-      });
+export const sendBookToApi = createAsyncThunk(
+  ADD_BOOK,
+  async (book, thunkAPI) => {
+    try {
+      await axios.post(URL, book);
+      return thunkAPI.dispatch(getBookFromApi());
+    } catch (error) {
+      return error;
     }
-    throw new Error();
-  } catch (error) {
-    return 'Book not deleted';
-  }
-};
+  },
+);
 
-export default reducer;
+export const removeBookFromApi = createAsyncThunk(
+  REMOVE_BOOK,
+  async (id, thunkAPI) => {
+    try {
+      await axios.delete(`${URL}/${id}`);
+      return thunkAPI.dispatch(getBookFromApi());
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
+const createApiSlice = createSlice({
+  name: 'booksFromApi',
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [getBookFromApi.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getBookFromApi.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.books = action.payload;
+    },
+    [getBookFromApi.rejected]: (state) => {
+      state.isLoading = false;
+    },
+  },
+});
+
+export default createApiSlice.reducer;

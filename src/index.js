@@ -1,19 +1,19 @@
+// Import Redux Provider and your store in the main component of your React app.
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
 import { Provider } from 'react-redux';
-import theStore from './redux/configStore';
-import App from './App';
+import Books from './components/Books';
+import store from './redux/configureStore';
 
-const append = document.querySelector('#root');
-const root = createRoot(append);
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Provider store={theStore}>
-        <App />
+    <BrowserRouter>
+      <Provider store={store}>
+        <Books />
       </Provider>
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>,
 );

@@ -1,35 +1,35 @@
 import React from 'react';
-import { CgProfile } from 'react-icons/cg';
 import { NavLink } from 'react-router-dom';
-import style from './Navbar.module.css';
+import { FaUserAlt } from 'react-icons/fa';
+import './componentStyles/Navbar.modules.css';
 
-function NavBar() {
+const Navbar = () => {
+  const links = [
+    {
+      id: 1,
+      name: 'BOOKS',
+      path: '/',
+    },
+    {
+      id: 2,
+      name: 'CATEGORIES',
+      path: '/categories',
+    },
+  ];
+
   return (
-    <nav className={style.nav}>
-      <div>
-        <h1>Bookstore CMS</h1>
-        <ul className={style.ul}>
-          <li>
-            <NavLink
-              to="/"
-              className={(Link) => (Link.isActive ? style.activeClass : '')}
-            >
-              Books
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/categories"
-              className={(Link) => (Link.isActive ? style.activeClass : '')}
-            >
-              Categories
-            </NavLink>
-          </li>
-        </ul>
+    <nav className="navBar display">
+      <span className="Bookstore-CMS fontStyles">Bookstore-CMS</span>
+      {links.map((link) => (
+        <span className="BOOK" key={link.id}>
+          <NavLink to={link.path}>{link.name}</NavLink>
+        </span>
+      ))}
+      <div className="Oval">
+        <FaUserAlt className="icon" />
       </div>
-      <CgProfile />
     </nav>
   );
-}
+};
 
-export default NavBar;
+export default Navbar;
