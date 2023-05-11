@@ -38,9 +38,9 @@ function AddMyBookForm() {
         <input type="text" name="author" placeholder="Author name" onChange={changeFunctio} required />
         <select name="category" onChange={changeFunctio} required>
           <option value="" defaultValue>category</option>
-          <option value="Action">Action</option>
-          <option value="Science Fiction">Science Fiction</option>
-          <option value="Economy">Economy</option>
+          <option value="Action">Commercial Subjects</option>
+          <option value="Science Fiction">Art Subjects</option>
+          <option value="Economy">Science Subjects</option>
         </select>
         <input className={styles.butt} type="submit" value="ADD BOOK" />
       </form>
